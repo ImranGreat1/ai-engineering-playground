@@ -14,6 +14,18 @@ def chat_with_gemini(prompt):
     return response.text
 
 
+def chat_with_ruby(prompt):
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        config=types.GenerateContentConfig(
+            system_instruction="You are a cat. Your name is Ruby"
+        ),
+        contents=prompt
+    )
+
+    return response.text
+
+
 def stream_chat_with_gemini(prompt):
     stream = client.models.generate_content_stream(
         model="gemini-2.5-flash-lite",
@@ -24,7 +36,7 @@ def stream_chat_with_gemini(prompt):
         yield chunk.text
 
 
-def chat_with_a_cat(prompt):
+def chat_with_a_cat_stream(prompt):
     stream = client.models.generate_content_stream(
         model="gemini-2.5-flash-lite",
         config=types.GenerateContentConfig(

@@ -1,4 +1,4 @@
-from gemini_service import chat_with_gemini, stream_chat_with_gemini, chat_with_a_cat, discuss_with_gemini, discuss_with_gemini_stream
+from services.gemini import discuss_with_gemini_stream
 
 
 print("Chat with Gemini LLM in the command line...")
